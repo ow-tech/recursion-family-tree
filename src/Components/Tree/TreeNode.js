@@ -7,10 +7,10 @@ function TreeNode({node}) {
     const hasChild = (node.countries || node.languages)? true:false;
   return (
     <>
-      <li>
+      <div >
         <div>
             {/* {hasChild &&( */}
-                <div onClick ={() => setChildVisibility(visible =>!visible)}>
+                <div onClick ={() => setChildVisibility(visible =>!visible)} className="parent">
                    
                 {node.name}
             </div>
@@ -21,13 +21,13 @@ function TreeNode({node}) {
         </div>
         {
             hasChild && childVisible && <div>
-                <ul>
-                    <Tree data ={node.countries || node.languages}/>
-                </ul>
+                <div className=''>
+                    <Tree data ={node.countries || node.languages} />
+                </div>
             </div>
         }
         
-        </li>  
+        </div>  
     </>
   )
 }
