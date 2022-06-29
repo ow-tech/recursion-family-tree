@@ -6,10 +6,10 @@ import CollapsibleLogic from '../CollapsibleLogic';
 
 
 
-function ChildNode({node, handleLastNodeClicked, handleVisibility}) {
+function ChildNode({node}) {
     const {lastNodeClicked, setLastNodeClicked} = useContext(lastNodeClickedContext)
   return (
-    <div className='childrenNodes' onClick={()=>setLastNodeClicked(()=>CollapsibleLogic(false))}>
+    <div className='lastNodes' onClick={()=>setLastNodeClicked(()=>CollapsibleLogic(false))}>
                <Tree data ={node.languages} />
       </div>
     

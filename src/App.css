@@ -23,10 +23,6 @@ body{
   position:relative;
   z-index: 10;
 }
-.wrapperWithContent{
- 
-
-}
 .pointer{
   cursor: pointer;
 }
@@ -39,17 +35,20 @@ body{
   border-radius: 5px;
 
 }
-.childrenNodes{
-  /* color: red; */
-  /* content:" "; */
-  position: center;
-  /* z-index: -1;
-  top: 0;
-  bottom: 0; */
-  left: 35%;
-  border-left: 5px dotted #000000;
-  /* transform: rotate(90deg); */
+.childrenNodes div .parent::before{
+  display: inline-block;
+  content: "";
+  border-top: .3rem dotted black;
+  width: 30%;
+  margin: 0 1rem;
+  transform: translateY(-1rem);
+  position: absolute;
+  left: -22%;
+  
+ 
 }
+
+
 
 /* .wrapper{
   border-left: 5px dotted black;

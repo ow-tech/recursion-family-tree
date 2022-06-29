@@ -1,6 +1,5 @@
-import React, {useState, useEffect, useContext} from 'react'
+import React from 'react'
 import Tree from './Tree';
-import { lastNodeClickedContext } from '../TreeList/TreeList';
 import ChildNode from './ChildNode';
 import CollapsibleLogic from '../CollapsibleLogic';
 
@@ -19,14 +18,14 @@ function TreeNode({node}) {
     <>
       <div className="wrapperWithContent">
         <>
-                <div onClick ={setChildVisibility } className="parent">
+                <div onClick ={setChildVisibility } className="parent ">
                 {node.name}
               </div>
         </>
         <>
           {
             hasChild && childVisible && <div>
-                <div className='childrenNodes'>
+                <div className='childrenNodes countries'>
                     <Tree data ={node.countries} key={node.ChildNode} />
                 </div>
             </div>

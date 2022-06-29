@@ -1,4 +1,4 @@
-import React, {useState, useEffect,useContext, createContext} from 'react'
+import React, {useState, useEffect, createContext} from 'react'
 import Tree from '../Tree/Tree.js';
 import {ApolloClient, InMemoryCache, gql, useQuery} from '@apollo/client';
 // import { UserContext } from '../Tree/TreeNode.js';
@@ -55,9 +55,6 @@ function TreeList() {
        
         ) 
       
-    
-        
-    
     
   )
 }
