@@ -1,6 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect,useContext, createContext} from 'react'
 import Tree from '../Tree/Tree.js';
 import {ApolloClient, InMemoryCache, gql, useQuery} from '@apollo/client';
+// import { UserContext } from '../Tree/TreeNode.js';
+
   
 
 
@@ -22,23 +24,37 @@ const continentsCountriesLanguages = gql `
     }
   }}
 `
-
+export const lastNodeClickedContext = createContext();
 function TreeList() {
+  
     const [treeData, setTreeData] = useState()
+    const [lastNodeClicked, setLastNodeClicked] =useState(true)
     const {data, loading, error} = useQuery(continentsCountriesLanguages, {client});
-   
+  
 
     useEffect(() => {
         if(data){
             setTreeData(data['continents'])
+            
         }
         
-      },[data])
+      },[data, lastNodeClicked])
 
   return (
+     
+      (loading ? <p>loading...</p>: error? <p>error.message</p>:
+      <>
+      <lastNodeClickedContext.Provider value={{lastNodeClicked, setLastNodeClicked}}>
+      <div className='wrapper'>
+         <Tree data ={treeData}/>
+        </div>
+        </lastNodeClickedContext.Provider>
+      </>
+       
+        ) 
+      
     
-        (loading ? <p>loading...</p>: error? <p>error.message</p>:
-        <Tree data ={treeData}/>) 
+        
     
     
   )
