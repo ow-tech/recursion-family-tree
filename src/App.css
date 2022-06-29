@@ -40,7 +40,7 @@ body{
 
 }
 .childrenNodes{
-  color: red;
+  /* color: red; */
   /* content:" "; */
   position: center;
   /* z-index: -1;
