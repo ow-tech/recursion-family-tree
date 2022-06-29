@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/recursion-family-tree/static/css/main.3d907bce.css",
+    "main.js": "/recursion-family-tree/static/js/main.55662d3b.js",
+    "static/js/787.07965c1c.chunk.js": "/recursion-family-tree/static/js/787.07965c1c.chunk.js",
+    "index.html": "/recursion-family-tree/index.html",
+    "main.3d907bce.css.map": "/recursion-family-tree/static/css/main.3d907bce.css.map",
+    "main.55662d3b.js.map": "/recursion-family-tree/static/js/main.55662d3b.js.map",
+    "787.07965c1c.chunk.js.map": "/recursion-family-tree/static/js/787.07965c1c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3d907bce.css",
+    "static/js/main.55662d3b.js"
+  ]
+}
