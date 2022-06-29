@@ -1,13 +1,17 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import Tree from './Tree'
+import { lastNodeClickedContext } from '../TreeList/TreeList'
+import CollapsibleLogic from '../CollapsibleLogic';
 
 
 
 
-
-function ChildNode() {
+function ChildNode({node, handleLastNodeClicked, handleVisibility}) {
+    const {lastNodeClicked, setLastNodeClicked} = useContext(lastNodeClickedContext)
   return (
-   
-    <Tree data ={node.languages } />
+    <div className='childrenNodes' onClick={()=>setLastNodeClicked(()=>CollapsibleLogic(false))}>
+               <Tree data ={node.languages} />
+      </div>
     
   )
 }

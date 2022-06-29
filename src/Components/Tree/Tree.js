@@ -1,26 +1,27 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import TreeNode from './TreeNode'
 import { lastNodeClickedContext } from '../TreeList/TreeList'
 
 function Tree( {data =[]}) {
 
-  const value = React.useContext(lastNodeClickedContext); 
+  const {lastNodeClicked, setLastNodeClicked} = useContext(lastNodeClickedContext)
 
 
-  useEffect(()=>{
-    if (value){
-      console.log(value)
-    }
+  // useEffect(()=>{
+  //   if (value){
+  //     // console.log(value)
+  //   }
    
 
-  },[value])
+  // },[value])
   
   return (
 
     <div className='center'>
         <div className='pointer'>
             {data.map(tree =>(
-                <TreeNode node ={tree}/>
+              <TreeNode key={tree.name} node={tree} />
+                // <TreeNode node ={tree}/>
             ))}
         </div>
     </div>

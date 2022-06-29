@@ -2,7 +2,7 @@ import React, {useState, useEffect,useContext, createContext} from 'react'
 import Tree from '../Tree/Tree.js';
 import {ApolloClient, InMemoryCache, gql, useQuery} from '@apollo/client';
 // import { UserContext } from '../Tree/TreeNode.js';
-
+import CollapsibleLogic from '../CollapsibleLogic';
   
 
 
@@ -28,7 +28,7 @@ export const lastNodeClickedContext = createContext();
 function TreeList() {
   
     const [treeData, setTreeData] = useState()
-    const [lastNodeClicked, setLastNodeClicked] =useState(true)
+    const [lastNodeClicked, setLastNodeClicked] =CollapsibleLogic(true)
     const {data, loading, error} = useQuery(continentsCountriesLanguages, {client});
   
 
@@ -44,11 +44,13 @@ function TreeList() {
      
       (loading ? <p>loading...</p>: error? <p>error.message</p>:
       <>
-      <lastNodeClickedContext.Provider value={{lastNodeClicked, setLastNodeClicked}}>
+     
       <div className='wrapper'>
-         <Tree data ={treeData}/>
+      <lastNodeClickedContext.Provider value={{lastNodeClicked, setLastNodeClicked}}>
+         <Tree data ={treeData} key={lastNodeClicked}/>
+         </lastNodeClickedContext.Provider>
         </div>
-        </lastNodeClickedContext.Provider>
+       
       </>
        
         ) 
